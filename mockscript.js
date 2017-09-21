@@ -11,3 +11,7 @@ function randomize(inputstring){
 		}
 	return newstring;
 }
+
+
+
+document.getElementById("start").addEventListener("click", 
