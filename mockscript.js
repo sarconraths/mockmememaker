@@ -13,5 +13,14 @@ function randomize(inputstring){
 }
 
 
+//document.getElementById("poutput").innerHTML = "Please enter something";
 
-document.getElementById("start").addEventListener("click", 
+
+function setInput() {
+	document.getElementById("poutput").innerHTML = "hello";
+}
+
+//	document.getElementById("secondline").value; 
+
+document.getElementById("start").addEventListener("click", setInput());
+document.getElementById("poutput").innerHTML = torandom; 
