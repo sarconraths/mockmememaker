@@ -1,3 +1,5 @@
+// ---------------------------- CORE FUNCTION: Randomize String
+
 function randomize(inputstring){
 	var newstring = '';
 		for(var i = 0; i < inputstring.length; i++){
@@ -12,15 +14,11 @@ function randomize(inputstring){
 	return newstring;
 }
 
+// ---------------------------- INPUT create String from User Input Buggy af
 
-//document.getElementById("poutput").innerHTML = "Please enter something";
-
-
+// ----------------- For Onclick Event - set String to be mocked
 function setInput() {
-	document.getElementById("poutput").innerHTML = "hello";
+	var toMockString = document.getElementById("firstline").value;	    
 }
 
-//	document.getElementById("secondline").value; 
-
-document.getElementById("start").addEventListener("click", setInput());
-document.getElementById("poutput").innerHTML = torandom; 
+// ---------------------------- OUTPUT
