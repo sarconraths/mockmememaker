@@ -1,27 +1,67 @@
-if(!document.getElementById("firstline") == ""){
-	var torandom = document.getElementById("firstline").value; 
-}else{
-	var torandom = "to appear here"; 
-}
+// ----------------- INPUT PLACEHOLDERS
 
+var toppl = "Top line";
+var bottompl = "Bottom line";
 
-function randomize(inputstring){
+document.getElementById("firstline").placeholder = toppl; 
+document.getElementById("secondline").placeholder = bottompl; 
+
+// ----------------- EVENT LISTENERS
+
+document.getElementById("start").addEventListener("click", randomizeTop);
+document.getElementById("start").addEventListener("click", randomizeBottom);
+
+document.getElementById("start").addEventListener("click", disableStart);
+document.getElementById("start").addEventListener("click", disableStart);
+
+document.getElementById("shuffle").addEventListener("click", randomizeTop);
+document.getElementById("shuffle").addEventListener("click", randomizeBottom);
+
+//---------------------------- CORE FUNCTION: Randomize String Top Line
+
+function randomizeTop(){
+	if(!document.getElementById("firstline") == ""){
+		var torandom = document.getElementById("firstline").value; 
+	}	
 	var newstring = '';
-		for(var i = 0; i < inputstring.length; i++){
+		for(var i = 0; i < torandom.length; i++){
 			if(Math.random()> 0.5){
-				newstring += inputstring.charAt(i); 
+				newstring += torandom.charAt(i); 
 			}else{
-				var x = inputstring.charAt(i);
+				var x = torandom.charAt(i);
 				var y = x.toUpperCase(); 
 				newstring += y;
 			}
-		}
-	document.getElementById("poutput").innerHTML = newstring; 
+		}		
+	document.getElementById("outputtop").innerHTML = newstring; 
 	return newstring;
 }
 
+//---------------------------- CORE FUNCTION: Randomize String Bottom Line
 
+function randomizeBottom(){
+	if(!document.getElementById("secondline") == ""){
+		var torandom = document.getElementById("secondline").value; 
+	}	
+	var newstring = '';
+		for(var i = 0; i < torandom.length; i++){
+			if(Math.random()> 0.5){
+				newstring += torandom.charAt(i); 
+			}else{
+				var x = torandom.charAt(i);
+				var y = x.toUpperCase(); 
+				newstring += y;
+			}
+		}		
+	document.getElementById("outputbottom").innerHTML = newstring; 
+	return newstring;
+}
 
-//	document.getElementById("secondline").value; 
+//---------------------------- SIDE FUNCTION: Disable Start-Button after first time
+
+function disableStart() {
+	document.getElementById("start").removeEventListener("click", randomizeTop);
+	document.getElementById("start").removeEventListener("click", randomizeBottom);
+}
 
 
