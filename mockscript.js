@@ -1,3 +1,10 @@
+if(!document.getElementById("firstline") == ""){
+	var torandom = document.getElementById("firstline").value; 
+}else{
+	var torandom = "to appear here"; 
+}
+
+
 function randomize(inputstring){
 	var newstring = '';
 		for(var i = 0; i < inputstring.length; i++){
@@ -9,18 +16,12 @@ function randomize(inputstring){
 				newstring += y;
 			}
 		}
+	document.getElementById("poutput").innerHTML = newstring; 
 	return newstring;
 }
 
 
-//document.getElementById("poutput").innerHTML = "Please enter something";
-
-
-function setInput() {
-	document.getElementById("poutput").innerHTML = "hello";
-}
 
 //	document.getElementById("secondline").value; 
 
-document.getElementById("start").addEventListener("click", setInput());
-document.getElementById("poutput").innerHTML = torandom; 
+
